@@ -10,6 +10,6 @@ test: scripts
 scripts: lib/index.js lib/parsers.js
 
 lib/%.js: src/%.coffee
-	coffee -o lib -c $^
+	./node_modules/coffee-script/bin/coffee -o lib -c $^
 
 .PHONY: test scripts

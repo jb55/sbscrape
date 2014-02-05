@@ -23,6 +23,7 @@
   "devDependencies": {
     "mocha": "*",
     "debug": "*",
+    "coffee-script": "*",
     "should": "*"
   },
   "author": "William Casarin",
