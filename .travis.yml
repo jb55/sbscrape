@@ -1,0 +1,6 @@
+language: node_js
+env:
+  - DEBUG="sbscrape:test"
+node_js:
+  - "0.8"
+  - "0.10"
