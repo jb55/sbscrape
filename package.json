@@ -1,6 +1,6 @@
 {
   "name": "sbscrape",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Scrape socialblade",
   "main": "index.js",
   "scripts": {
