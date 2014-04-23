@@ -50,7 +50,8 @@ findModule = (modules, name) ->
 
 parsers.page = (o) ->
   userInfo = o("#UserInformation")?[0]
-  summary = o(".SummaryWrap div p span")
+  summary = o("#youtube-summary-outer-wrap div p span")
+  debug("summary %j", summary)
   viewInfo = userInfo?.children?[4]?.data
   subInfo = userInfo?.children?[6]?.data
   averageInfo = (n) -> summary?[n]?.children?[0]?.data
@@ -58,7 +59,7 @@ parsers.page = (o) ->
 
   totalSubscribers = findModule(modules, "subscribers")
   totalViews = findModule(modules, "video views")
-  debug(parsers.number(totalViews))
+  debug "totalViews %s", lazy -> parsers.number(totalViews)
 
   number = /-?[\d,]+/
 
