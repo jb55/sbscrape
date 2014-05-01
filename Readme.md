@@ -3,7 +3,7 @@
 
   Scrape socialblade
 
-  [![Build Status](https://travis-ci.org/jb55/sbscrape.png)](https://travis-ci.org/jb55/sbscrape)
+  [![Build Status](https://travis-ci.org/jb55/sbscrape.svg)](https://travis-ci.org/jb55/sbscrape)
 
 ## Installation
 
