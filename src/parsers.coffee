@@ -12,7 +12,7 @@ parsers.delta = (str) ->
     when '-' then -num
     else 0
 
-text = (x) -> x[0].children[0].data
+text = (x) -> x?[0]?.children?[0]?.data
 
 parsers.average = (td) ->
   average: parsers.delta(td?.children?[0]?.children?[0]?.data)
