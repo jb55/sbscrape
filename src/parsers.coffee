@@ -12,6 +12,8 @@ parsers.delta = (str) ->
     when '-' then -num
     else 0
 
+text = (x) -> x[0].children[0].data
+
 parsers.average = (td) ->
   average: parsers.delta(td?.children?[0]?.children?[0]?.data)
   total: parsers.delta(td?.children?[2]?.children?[0]?.data)
@@ -63,13 +65,16 @@ parsers.page = (o) ->
 
   number = /-?[\d,]+/
 
+  averageViews = text(o("#afd-header-views-30d"))
+  debug("averageViews %j", averageViews)
+
   summary:
     subscribers:
       total: parsers.number(totalSubscribers)
       average: parsers.number(averageInfo(3)?.match(number)?[0])
     views:
       total: parsers.number(totalViews)
-      average: parsers.integer(averageInfo(1)?.match(number)?[0])
+      average: parsers.integer(averageViews)
 
 parsers.changes = (table) ->
   rows = table?.children or []
